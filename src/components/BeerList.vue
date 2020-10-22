@@ -1,9 +1,10 @@
 <template lang='html'>
-  <body>
+  <article id="beer_list">
+      <h2>Choose your BrewDog</h2>
       <ul>
           <list-item v-for="(beer, id) in beers" :key="beer.id" :beer="beer"></list-item>
       </ul>
-  </body>
+  </article>
 </template>
 
 <script>
@@ -19,5 +20,7 @@ export default {
 </script>
 
 <style lang='css'>
+
+
 
 </style>

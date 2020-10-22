@@ -2,7 +2,7 @@
   <main>
     <h1>BrewDog API</h1>
       <beer-list :beers='beers'></beer-list>
-      
+      <beer-detail :beer='selectedBeer'></beer-detail>
   </main>
 </template>
 
@@ -10,7 +10,7 @@
 
 import BeerList from './components/BeerList.vue';
 import BeerDetail from './components/BeerDetail.vue';
-import { eventBus } from '@/main.js';
+import { eventBus } from './main.js';
 
 
 export default {
@@ -20,23 +20,24 @@ export default {
       beers: [],
       selectedBeer: null,
       favouriteBeers: []
-  };
-},
-mounted() {
-  fetch('https://api.punkapi.com/v2/beers')
-  .then(res => res.json())
-  .then(beers => this.beers = beers);
+    };
+  },
+  mounted() {
+    fetch('https://api.punkapi.com/v2/beers')
+    .then(res => res.json())
+    .then(beers => this.beers = beers);
 
-  eventBus.$on('beer-selected', (beer) => {
-    this.selectedBeer = beer
-  })
-},
-components: {
-  "beer-list": BeerList,
-  "beer-detail"
-},
-
-}
+    eventBus.$on('beer-selected', (beer) => {
+      this.selectedBeer = beer
+      console.log("BEER BEER:", this.selectedBeer);
+    })
+    
+  },
+  components: {
+    "beer-list": BeerList,
+    "beer-detail": BeerDetail
+  }
+  }
 </script>
 
 <style>

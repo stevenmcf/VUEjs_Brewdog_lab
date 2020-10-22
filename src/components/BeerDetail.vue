@@ -1,15 +1,13 @@
 <template lang='html'>
-  <div v-if='beer'>
-      <h3>{{ beer.name }}</h3>
-      <p>{{ beer.abv }}</p>
-      <p> {{ beer.tagline }}</p>
-      <p>{{ beer.image_url }}</p>
-
-  </div>
+  <article v-if='beer'>
+      <h3>Beer Name: {{ beer.name }}</h3>
+      <p>Strength: {{ beer.abv }}</p>
+      <p>Whats it all about: {{ beer.tagline }}</p>
+      <img :src="beer.image_url" alt="beer image">
+  </article>
 </template>
 
 <script>
-
 import { eventBus } from '../main.js';
 
 export default {

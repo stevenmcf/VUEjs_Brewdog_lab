@@ -7,9 +7,14 @@
 </template>
 
 <script>
+import BeerListItem from './BeerListItem.vue'
+
 export default {
     name: "beer-list",
     props: ['beers'],
+    components: {
+        "list-item": BeerListItem
+    }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template lang="html">
   <main>
     <h1>BrewDog API</h1>
-      <beers-list :beers='beers'></beers-list>
+      <beer-list :beers='beers'></beer-list>
   </main>
 </template>
 

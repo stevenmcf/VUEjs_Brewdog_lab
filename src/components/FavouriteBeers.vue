@@ -2,7 +2,7 @@
 <section id='favourite_beers'>
     <h3>Your Favourite Beers</h3>
     <ul class="list-container">
-        <li v-for="favouriteBeer in favouriteBeers">Beer: {{ favouriteBeer.name }}, Strength: {{ favouriteBeer.abv }} <img class="small-beer" :src="favouriteBeer.image_url"></li>
+        <li v-for="favouriteBeer in favouriteBeers">Beer: {{ favouriteBeer.name }} <br> Strength: {{ favouriteBeer.abv }}.abv <br><img class="small-beer" :src="favouriteBeer.image_url"></li>
      </ul>
 </section>
   
@@ -21,22 +21,25 @@ export default {
     border: 2px solid blue;
     border-radius: 8px;
     padding: 16px;
+    background-color: cadetblue;
+    width: 27%;
   
+}
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 li {
     border: 1px solid black;
     border-radius: 8px;
     padding: 16px;
-    width: 25%;
+    width: 20%;
+    background-color: white;
     list-style: none;
     margin: 10px;
 }
 
-.list-container {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 
 .small-beer {

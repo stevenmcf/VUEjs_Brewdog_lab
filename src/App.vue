@@ -3,15 +3,15 @@
     <header>
       <h1>BrewDog API</h1>
     </header>
-      
+      <section class="main-container">
       <beer-list :beers='beers'></beer-list>
-      <button v-if="!favouriteBeers.includes(selectedBeer)" v-on:click="addToFavourites">Add to favourites!</button>
       
       <beer-detail :beer='selectedBeer'></beer-detail>
       
       
       <favourite-beers :favouriteBeers='favouriteBeers'></favourite-beers>
       <!-- <button v-if="favouriteBeers.includes(selectedBeer)" v-on:click="deleteFromFavourites">You now hate this beer</button> -->
+      </section>
   </main>
 </template>
 
@@ -49,13 +49,17 @@ export default {
       console.log("BEER BEER:", this.selectedBeer);
     })
 
+    eventBus.$on('favourite-selected', (beer) => {
+      this.favouriteBeers.unshift(beer)
+    })
+
     },
   
   methods: {
-    addToFavourites: function() {
-      this.favouriteBeers.push(this.selectedBeer)
-    }
-    // deleteFromFavourites: function() {
+    // addToFavourites: function() {
+    //   this.favouriteBeers.push(this.selectedBeer)
+    // }
+    // // deleteFromFavourites: function() {
     //   this.favouriteBeers.unshift(this.)
     // }
   },
@@ -69,7 +73,8 @@ export default {
 main {
   margin: 0px;
   padding: 0px;
-  cursor: pointer;
+ 
+  
 }
 
 header {
@@ -80,6 +85,11 @@ header {
   font-size: 40px;
 }
 
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+/* 
 ul {
   display: flex;
   justify-content: flex-start;
@@ -87,7 +97,7 @@ ul {
   padding:20px;
   margin: 0;
 }
-
+ */
 
 
 </style>

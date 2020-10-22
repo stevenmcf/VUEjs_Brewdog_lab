@@ -21,6 +21,14 @@ export default {
 
 <style lang='css'>
 
+#beer_list {
+    border: 2px solid blue;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: cadetblue;
+    width: 27%;
+  
+}
 
 
 </style>

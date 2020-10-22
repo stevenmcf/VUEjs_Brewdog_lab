@@ -23,4 +23,12 @@ export default {
 
 <style lang="css" scoped>
 
+li {
+     cursor: pointer;
+}
+
+li:hover {
+    color: darkmagenta;
+}
+
 </style>

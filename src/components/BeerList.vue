@@ -27,7 +27,7 @@ export default {
     padding: 16px;
     background-color: cadetblue;
     width: 27%;
-  
+    max-height: 100vh;
 }
 
 

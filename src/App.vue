@@ -6,7 +6,7 @@
       <section class="main-container">
       <beer-list :beers='beers'></beer-list>
       
-      <beer-detail :beer='selectedBeer'></beer-detail>
+      <beer-detail :beer='selectedBeer' :favouriteBeers='favouriteBeers'></beer-detail>
       
       
       <favourite-beers :favouriteBeers='favouriteBeers'></favourite-beers>
@@ -71,18 +71,25 @@ export default {
 <style lang='css' scoped>
 
 main {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 10pt;
   margin: 0px;
   padding: 0px;
- 
-  
+  height: 80%;
+}
+
+html {
+  margin: 0px;
+  height: max-content;
 }
 
 header {
   margin: 0%;
   background-color: black;
-  padding-top: 50px;
-  color: blue;
-  font-size: 40px;
+  padding-top: 15px;
+  color: white;
+  text-align: center;
+  font-size: 14pt;
 }
 
 .main-container {
